@@ -2,10 +2,10 @@
     display: flex;
 }
 
-#panel-img, #panel-form {
-    height: 95vh;
+#panel-img,
+#panel-form {
     width: 50vw;
-    min-height: 500px;
+    min-height: 95vh;
 }
 
 #panel-img>img {
@@ -22,7 +22,8 @@
     width: 80%;
 }
 
-#panel-form input, #panel-form button {
+#panel-form input,
+#panel-form button {
     border-radius: 20px;
     box-sizing: border-box;
     font-size: 1.5em;
@@ -30,8 +31,7 @@
     width: 100%;
 }
 
-#panel-form button
-{
+#panel-form button {
     width: 75%;
 }
 
@@ -53,8 +53,13 @@
     font-size: 1.2em;
 }
 
-button i
-{
+.messages {
+    color: #800020;
+    width: 75%;
+    padding-left: 12px;
+}
+
+button i {
     margin-right: 6px;
 }
 
@@ -65,8 +70,8 @@ button i
         height: auto;
         width: 100%;
     }
-    #login-page
-    {
+
+    #login-page {
         padding: 0;
     }
 
@@ -76,6 +81,4 @@ button i
         height: auto;
         width: 100%;
     }
-    
-    
 }
