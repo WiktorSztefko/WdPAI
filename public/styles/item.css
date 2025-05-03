@@ -1,7 +1,7 @@
 main {
     height: auto;
     display: flex;
-    min-height: calc(100vh - 200px - 5vh);;
+    min-height: calc(100vh - 200px - 5vh);
 }
 
 aside {
@@ -11,19 +11,22 @@ aside {
     width: 25vw;
 }
 
+aside p {
+    margin: 6px 12px 12px 6px;
+}
+
 aside h2,
 p {
     margin: 0;
 }
 
-section>p
-{
-    margin-bottom: 12px;
-}
-
 section {
     width: 50vw;
     height: 100%;
+}
+
+section>p {
+    margin-bottom: 12px;
 }
 
 section>h2 {
@@ -32,7 +35,7 @@ section>h2 {
 
 h1 {
     text-align: center;
-    color: #800020;
+    color: var(--tertiary-color);
 }
 
 h2 {
@@ -41,7 +44,8 @@ h2 {
 
 ul {
     color: white;
-    padding-left: 20px
+    padding-left: 20px;
+    margin-top: 6px;
 }
 
 #coctail-image-div {
@@ -74,10 +78,6 @@ ul {
         height: auto;
         min-height: 200px;
         width: 100%;
-    }
-
-    aside p:last-of-type {
-        margin-bottom: 12px;
     }
 
     p,

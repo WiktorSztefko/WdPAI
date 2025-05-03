@@ -14,13 +14,12 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300public800;1,300public800&family=Roboto:ital,wght@0,100public900;1,100public900&family=Rubik:ital,wght@0,300public900;1,300public900&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/8fd9367667.js" crossorigin="anonymous"></script>
-    <script src="public/scripts/Card.js" defer></script>
 
 </head>
 
 <body>
     <header>
-        <a href="main.html" class="flex-center">
+        <a href="main" class="flex-center">
             <img id="logo" src="public/images/photos/logo.jpeg" alt="" class="images-fit">
             <h1 class="header-text">Cocktail King</h1>
         </a>
@@ -59,7 +58,14 @@
         </div>
 
         <section class="cards">
-           
+              <?php foreach ($alcohols as $alcohol): ?>
+                    <!-- <a href="cocktail?name=<?=$alcohol->getName();?>"> -->
+                    <figure class="card hover-effect">
+                        <img src="public/images/alcohols/<?=$alcohol->getImage();?>">
+                        <figcaption><?=$alcohol->getName();?></figcaption>
+                    </figure>
+                    <!-- </a> -->
+            <?php endforeach; ?>
         </section>
     </main>
 

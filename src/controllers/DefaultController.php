@@ -14,16 +14,4 @@ class DefaultController extends AppController {
     public function main() {
         $this->render('main');
     }
-
-    public function cocktails() {
-        $this->render('cocktails');
-    }
-
-    public function alcohols() {
-        $this->render('alcohols');
-    }
-
-     public function item() {
-        $this->render('item');
-    }
 }

@@ -1,0 +1,190 @@
+main {
+  flex-direction: column;
+  min-height: calc(100vh - 5vh - 200px);
+  width: 100%
+}
+
+form {
+  width: 100%;
+  padding: 36px 42px;
+}
+
+#data-panel {
+  display: flex;
+  width: 100%;
+  gap: 36px;
+}
+
+#text-div {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 50%;
+}
+
+textarea:focus, select:focus {
+  outline: none;
+}
+
+button,
+input,
+label,
+p,
+textarea,
+#difficulty-level-select {
+  width: 100%;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: white;
+  font-size: 2em;
+  line-height: 2em;
+  padding: 10px;
+}
+
+p {
+  margin: 0;
+  text-align: center;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+input[type="number"] {
+  width: 15%;
+  padding: 12px;
+}
+
+#file-panel {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 18px);
+  gap: 36px;
+  margin-top: 36px;
+}
+
+#file-div {
+  display: flex;
+  gap: 36px
+}
+
+label {
+  padding: 10px;
+  text-align: center;
+}
+
+#ingredients-div {
+  height: auto;
+  width: 50%;
+}
+
+#ingredients-div h2 {
+  color: white;
+  font-size: 2em;
+  margin: 0;
+}
+
+#ingredients-add-button {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  color: var(--secondary-color);
+  font-size: 2em;
+  margin: 18px 0 0 0;
+  padding: 10px;
+  width: 25%;
+  text-align: center;
+}
+
+#difficulty-level-div
+{
+  display: flex;
+  width: 100%;
+  gap: 36px
+}
+
+.ingredient-container {
+  display: flex;
+  gap: 18px;
+  height: 100%;
+  width: 100%;
+  margin-top: 18px;
+}
+
+.count-select,
+.unit-select
+{
+  width: 50%;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  color: white;
+  font-size: 1.5em;
+  padding: 6px;
+}
+
+.unit-select {
+  width: 15%;
+}
+
+.delete-icon {
+  width: 3em;
+  height: 3em;
+  background-color: var(--primary-color);
+  border-radius: 100%;
+  line-height: 3em;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+
+  form {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 0;
+  }
+
+  label,
+  p {
+       width: 100%;
+       margin: 0;
+  }
+
+  section,
+  #ingredients-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #ingredients-div h2 {
+    text-align: center;
+  }
+
+  #ingredients-add-button {
+    width: 100%;
+  }
+
+  #data-panel {
+    flex-direction: column;
+  }
+
+  #file-panel {
+    width: 100%;
+    align-items: center;
+  }
+
+  #file-div {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 18px;
+  }
+
+  #text-div {
+    width: 100%;
+  }
+}

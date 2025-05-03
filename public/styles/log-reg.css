@@ -22,17 +22,10 @@
     width: 80%;
 }
 
-#panel-form input,
-#panel-form button {
-    border-radius: 20px;
-    box-sizing: border-box;
-    font-size: 1.5em;
-    margin: 6px;
-    width: 100%;
-}
-
 #panel-form button {
     width: 75%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 #panel-form>form>div>i {
@@ -54,13 +47,17 @@
 }
 
 .messages {
-    color: #800020;
+    color: var(--tertiary-color);
     width: 75%;
     padding-left: 12px;
 }
 
 button i {
     margin-right: 6px;
+}
+
+.no-valid {
+    border: 1px solid var(--tertiary-color) !important;
 }
 
 @media screen and (max-width: 1200px) {

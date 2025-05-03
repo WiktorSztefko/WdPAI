@@ -9,12 +9,14 @@ Routing::get('', 'DefaultController');
 Routing::get('login', 'DefaultController');
 Routing::get('register', 'DefaultController');
 Routing::get('main', 'DefaultController');
-Routing::get('cocktails', 'DefaultController');
-Routing::get('alcohols', 'DefaultController');
-Routing::get('item', 'DefaultController');
+Routing::get('cocktails', 'CocktailController');
+Routing::get('alcohols', 'AlcoholController');
+Routing::get('cocktail', 'CocktailController');
+Routing::get('upload', 'UploadController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
+Routing::post('upload', 'UploadController');
 
 Routing::run($path);
  

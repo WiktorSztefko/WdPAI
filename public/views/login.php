@@ -15,7 +15,6 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/8fd9367667.js" crossorigin="anonymous"></script>
 
-
 </head>
 
 <body id="login-page">

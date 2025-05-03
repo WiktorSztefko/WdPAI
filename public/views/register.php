@@ -14,7 +14,8 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300public800;1,300public800&family=Roboto:ital,wght@0,100public900;1,100public900&family=Rubik:ital,wght@0,300public900;1,300public900&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/8fd9367667.js" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="public/scripts/registerValidation.js" defer></script>
+    
 </head>
 
 <body id="login-page">

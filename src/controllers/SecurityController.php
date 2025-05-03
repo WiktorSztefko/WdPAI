@@ -2,59 +2,51 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
+require_once __DIR__.'/../repository/UserRepository.php';
 
-class securityController extends AppController {
+class SecurityController extends AppController {
+
+    private $userRepository;
+
+    public function __construct() {
+        parent::__construct();
+        $this->userRepository = new UserRepository();
+    }
     
     public function login() {
-        $user = new User("js@wp.pl", "admin", "marek", "kowal");
-
-        if ($this->isPost())
-        {
-            $email = $_POST["email"];
-            $password = $_POST["password"];
-            $messages = [];
-
-            $messages["error_login"] = "Nieprawidłowy login lub hasło";
-            $messages["value_email"] = $email;
-    
-            if ($user->getEmail() != $email || $user->getPassword() != $password)
-                return $this->render('login', ["messages" => $messages]);
-
-            return $this->render('main');
-        }
-        else
-        {
+        if (!$this->isPost())
             return $this->render('login');
+
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $messages = [];
+        $user = $this->userRepository->getUser($email);
+
+        if(!$user || $user->getEmail() != $email || !password_verify($password, $user->getPassword())) {
+            $messages["value_email"] = $email;
+            $messages["error_login"] = "Nieprawidłowy login lub hasło";
+            return $this->render('login', ["messages" => $messages]);
         }
+
+        return $this->render('main');
     }
 
     public function register() {
-        if ($this->isPost())
-        {
-            $fields = ["name", "surname", "email", "username", "password", "confirmedPassword"];
-            $messages = [];
-            $all_correct = true;
-
-            foreach ($fields as $field) {
-                $$field = $_POST[$field] ?? "";
-    
-                if (trim($$field) === "") {
-                    $messages["error_$field"] = "To pole  jest wymagane";
-                    $all_correct = false;
-                }
-
-                if (!in_array($field, ['password', 'confirmedPassword']))
-                    $messages["value_$field"] = $$field;
-            }
-
-            if ($all_correct) {
-                $url = "http://$_SERVER[HTTP_HOST]";
-                header("Location: $url/main");
-            }
-            else
-                return $this->render('register', ["messages" => $messages]);
-        }
-        else
+        if (!$this->isPost()) {
             return $this->render('register');
+        }
+
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $username = $_POST['username'];
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $user = new User($name, $surname, $username, $email, $hashedPassword);
+        $this->userRepository->addUser($user);
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: $url/main");
     }
 }

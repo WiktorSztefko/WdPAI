@@ -19,7 +19,7 @@
 
 <body>
     <header>
-        <a href="main.html" class="flex-center">
+        <a href="main" class="flex-center">
             <img id="logo" src="public/images/photos/logo.jpeg" alt="" class="images-fit">
             <h1 class="header-text">Cocktail King</h1>
         </a>
@@ -78,22 +78,22 @@
 
     <div id="alko-bar">
         <div class="image-container">
-            <img src="public/images/coctails/old fashioned.jpeg" alt="">
+            <img src="public/images/cocktails/old fashioned.jpeg" alt="">
             <div class="overlay flex-center"><span class="title">OLD FASHIONED</span>Jeden z najstarzych koktaili
                 świata, jego historia sięga początku XVIII wieku</div>
         </div>
         <div class="image-container">
-            <img src="public/images/coctails/lynchburg lemonade.jpeg" alt="">
+            <img src="public/images/cocktails/lynchburg lemonade.jpeg" alt="">
             <div class="overlay flex-center"><span class="title">LYNCHBURG LEMONADE</span>Nazwa Lynchburg pochodzi od
                 miejscowości, w której powstaje Jack Daniels</div>
         </div>
         <div class="image-container">
-            <img src="public/images/coctails/basil smash.jpeg" alt="">
-            <div class="overlay flex-center"><span class="title">BASIL SMASH</span>Koktails powstał dopiero w 2008 roku,
+            <img src="public/images/cocktails/basil smash.jpeg" alt="">
+            <div class="overlay flex-center"><span class="title">BASIL SMASH</span>Koktajl powstał dopiero w 2008 roku,
                 swój intrygujący kolor zawdzięcza właśnie bazylii</div>
         </div>
         <div class="image-container">
-            <img src="public/images/coctails/amf.jpeg" alt="">
+            <img src="public/images/cocktails/amf.jpeg" alt="">
             <div class="overlay flex-center"><span class="title">AMF</span>Adios, Motherfucker... parafraza słów
                 barmana po przygotowaniu tego mega mocnego drinka</div>
         </div>
