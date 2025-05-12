@@ -8,6 +8,19 @@
     min-height: 95vh;
 }
 
+#panel-form input,
+#panel-form button {
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--primary-color);
+    color: white;
+    font-size: 1.5em;
+    margin: 6px 0;
+    padding: 10px 10px 10px 42px;
+}
+
 #panel-img>img {
     height: 100%;
     width: 100%;
@@ -15,10 +28,6 @@
 }
 
 #panel-form>form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 80%;
 }
 
@@ -34,22 +43,18 @@
     left: 15px;
 }
 
-.input-icon-div {
-    width: 75%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.input-icon-div>i {
-    color: var(--primary-color);
-    font-size: 1.2em;
-}
-
 .messages {
-    color: var(--tertiary-color);
     width: 75%;
-    padding-left: 12px;
+}
+
+.messages p {
+    width: 100%;
+    color: var(--tertiary-color);
+    text-align: left;
+}
+
+.messages i {
+    padding-right: 6px;
 }
 
 button i {
@@ -64,14 +69,13 @@ button i {
     #login-page {
         flex-direction: column-reverse;
         align-items: center;
-        height: auto;
-        width: 100%;
     }
 
     #login-page {
         padding: 0;
     }
 
+    #login-page,
     #panel-form,
     #panel-form>form,
     #panel-img {

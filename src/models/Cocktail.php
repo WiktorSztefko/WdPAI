@@ -8,6 +8,8 @@ class Cocktail {
     private $funFact;
     private $ingredients;
     private $preparationInstruction;
+    private $likes;
+    private $id;
 
     public function __construct($name, $image) {
         $this->name = $name;
@@ -68,5 +70,25 @@ class Cocktail {
 
     public function setPreparationInstruction(string $preparationInstruction) {
         $this->preparationInstruction = $preparationInstruction;
+    }
+
+    public function getLikes(): int
+    {
+        return $this->likes;
+    }
+
+    public function setLikes(int $likes)
+    {
+        $this->likes = $likes;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id)
+    {
+        $this->id = $id;
     }
 }

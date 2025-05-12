@@ -1,11 +1,12 @@
 <?php
 
 require_once 'Repository.php';
-require_once __DIR__.'/../models/Cocktail.php';
+require_once __DIR__ . '/../models/Cocktail.php';
 
-class UploadRepository extends Repository {
-
-    public function addCocktail(Cocktail $cocktail): void {
+class UploadRepository extends Repository
+{
+    public function addCocktail(Cocktail $cocktail): void
+    {
         $connection = $this->database->connect();
         $date = new DateTime();
 
@@ -13,22 +14,23 @@ class UploadRepository extends Repository {
             $connection->beginTransaction();
 
             $stmt = $connection->prepare('
-                INSERT INTO cocktails (name, description, fun_fact, image, created_at, id_assigned_by, difficulty_level, preparation_instruction)
+                INSERT INTO cocktails
+                (name, description, fun_fact, image, created_at, id_assigned_by, difficulty_level, preparation_instruction)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING id_cocktail
             ');
 
-            //TODO you should get this value from logged user session
-            $assignedById = 1;
+            session_start();
+            $assignedById = $_SESSION['user']->getId();
 
             $stmt->execute([
-            $cocktail->getName(),
-            $cocktail->getDescription(),
-            $cocktail->getFunFact(),
-            $cocktail->getImage(),
-            $date->format('Y-m-d'),
-            $assignedById,
-            $cocktail->getDifficultyLevel(),
-            $cocktail->getPreparationInstruction(),
+                $cocktail->getName(),
+                $cocktail->getDescription(),
+                $cocktail->getFunFact(),
+                $cocktail->getImage(),
+                $date->format('Y-m-d'),
+                $assignedById,
+                $cocktail->getDifficultyLevel(),
+                $cocktail->getPreparationInstruction(),
             ]);
 
             $id = $stmt->fetchColumn();
@@ -54,23 +56,27 @@ class UploadRepository extends Repository {
         }
     }
 
-    public function getIngredients(): array {
-        $stmt = $this->database->connect()->prepare('
-            SELECT id_ingredient, name_ingredient FROM ingredients ORDER BY name_ingredient ASC 
+    public function checkName(string $request): bool
+    {
+        $connection = $this->database->connect();
+        $stmt = $connection->prepare('
+            SELECT name FROM cocktails WHERE name = :request
         ');
-
+        $stmt->bindParam(':request', $request, PDO::PARAM_STR);
         $stmt->execute();
-        $ingredients = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $ingredients;
+
+        return $stmt->rowCount() > 0;
     }
 
-    public function getUnits(): array {
-        $stmt = $this->database->connect()->prepare('
-            SELECT id_unit, name_unit FROM units ORDER BY id_unit ASC 
+    public function checkImage(string $request): bool
+    {
+        $connection = $this->database->connect();
+        $stmt = $connection->prepare('
+            SELECT image FROM cocktails WHERE image = :request
         ');
-
+        $stmt->bindParam(':request', $request, PDO::PARAM_STR);
         $stmt->execute();
-        $units = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $units;
+
+        return $stmt->rowCount() > 0;
     }
 }

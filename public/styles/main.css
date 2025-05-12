@@ -1,3 +1,7 @@
+body {
+    position: relative;
+}
+
 main {
     display: flex;
     justify-content: space-between;
@@ -5,10 +9,10 @@ main {
 }
 
 aside {
-    display: flex;
-    flex-direction: column;
     height: 60vh;
     width: 25vw;
+    align-items: center;
+    margin-top: 36px;
 }
 
 aside>h2 {
@@ -31,6 +35,10 @@ button {
     color: white;
     font-size: 1.5em;
     padding: 10px;
+}
+
+button:hover {
+    background-color: #013220;
 }
 
 #alko-bar {
@@ -60,6 +68,7 @@ button {
 #slider {
     height: auto;
     width: 50vw;
+    margin-top: 36px;
     overflow: hidden;
     position: relative;
 }
@@ -67,7 +76,13 @@ button {
 #slides {
     display: flex;
     animation: slide 30s infinite ease-in-out;
+}
+
+#slides a {
+    flex-shrink: 0;
+    width: 100%;
     height: 100%;
+    display: block;
 }
 
 .slide {
@@ -76,7 +91,6 @@ button {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    object-fit: cover;
 }
 
 .title {
@@ -125,30 +139,39 @@ button {
 @media screen and (max-width: 1200px) {
 
     aside {
-        width: 100%;
         height: 25vh;
-        min-height: 200px;
+        min-height: 220px;
+        margin-bottom: 12px;
+    }
+
+    aside,
+    section,
+    #alko-bar img {
+        width: 100% !important;
     }
 
     button {
-        width: 60%;
+        width: 80%;
     }
 
     main {
         display: block;
     }
 
+    span {
+        display: contents;
+    }
+
+    #alko-bar>div {
+        width: 50%;
+    }
+
     section {
-        width: 100% !important;
         height: 25vh;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 18px 0 0 0;
-    }
-
-    span {
-        display: contents;
     }
 
     #alko-bar {
@@ -161,15 +184,13 @@ button {
         margin-bottom: 18px;
     }
 
-    #alko-bar>div {
-        width: 50%;
-        aspect-ratio: 1 / 1;
+    #alko-bar img {
+        border-radius: 20px;
     }
 
-    #alko-bar img {
-        width: 100%;
+    #alko-bar img,
+    #alko-bar>div {
         aspect-ratio: 1 / 1;
-        border-radius: 20px;
     }
 
     #slider {

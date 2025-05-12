@@ -2,76 +2,54 @@
 <html lang="pl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocktail King - Koktajle</title>
-    <link rel="icon" type="image/png" href="public/images/photos/favicon.png">
+    <?php include('templates/metaHeader.php'); ?>
+    <?php include('templates/redirection.php'); ?>
 
-    <link rel="stylesheet" href="public/styles/index.css">
+    <title>Cocktail King - Koktajle</title>
+
     <link rel="stylesheet" href="public/styles/alcohols-cocktails.css">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300public800;1,300public800&family=Roboto:ital,wght@0,100public900;1,100public900&family=Rubik:ital,wght@0,300public900;1,300public900&display=swap"
-        rel="stylesheet">
     <script src="https://kit.fontawesome.com/8fd9367667.js" crossorigin="anonymous"></script>
-    
+    <script src="public/scripts/search.js" defer></script>
+
 </head>
 
 <body>
-    <header>
-        <a href="main" class="flex-center">
-            <img id="logo" src="public/images/photos/logo.jpeg" alt="" class="images-fit">
-            <h1 class="header-text">Cocktail King</h1>
-        </a>
-    </header>
+    <?php include('templates/header.php'); ?>
+    <?php include('templates/currentUser.php'); ?>
 
     <main>
-        <div id="left-banner">
-            <nav>
-                <ul class="desktop-icons">
-                    <li class="hover-effect">
-                        <a href="main">
-                            <i class="fa-solid fa-house"></i>
-                            <span>Strona główna</span>
-                        </a>
-                    </li>
-                    <li class="hover-effect">
-                        <a href="cocktails">
-                            <i class="fa-solid fa-martini-glass"></i>
-                            <span>Koktajle</span>
-                        </a>
-                    </li>
-                    <li class="hover-effect">
-                        <a href="alcohols">
-                            <i class="fa-solid fa-whiskey-glass"></i>
-                            <span>Alkohole</span>
-                        </a>
-                    </li>
-                    <li class="hover-effect">
-                        <a href="">
-                            <i class="fa-solid fa-user"></i>
-                            <span>Moje konto</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <?php include('templates/nav.php'); ?>
 
-        <section class="cards">
-            <?php foreach ($cocktails as $cocktail): ?>
-                    <a href="cocktail?name=<?=$cocktail->getName();?>">
-                    <figure class="card hover-effect">
-                        <img src="public/images/cocktails/<?=$cocktail->getImage();?>">
-                        <figcaption><?=$cocktail->getName();?></figcaption>
-                    </figure>
+        <div id="content-container">
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Szukaj" class="hover-effect-not-scale">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <section class="cards">
+                <?php foreach ($cocktails as $cocktail): ?>
+                    <a href="cocktail?name=<?= $cocktail->getName(); ?>">
+                        <figure class="card hover-effect flex-column">
+                            <img src="public/images/cocktails/<?= $cocktail->getImage(); ?>"
+                                alt="<?= $cocktail->getImage(); ?>">
+                            <figcaption><?= $cocktail->getName(); ?></figcaption>
+                        </figure>
                     </a>
-            <?php endforeach; ?>
-        </section>
+                <?php endforeach; ?>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <span>Wyjątkowe koktajle, niezapomniane chwile – smakuj życie z każdym łykiem</span>
-    </footer>
+    <?php include('templates/footer.php'); ?>
 </body>
 
 </html>
+
+<template id="cocktail-template">
+    <a href="">
+        <figure class="card hover-effect flex-column">
+            <img src="">
+            <figcaption></figcaption>
+        </figure>
+    </a>
+</template>

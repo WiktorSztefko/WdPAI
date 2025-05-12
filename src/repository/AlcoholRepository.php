@@ -1,14 +1,15 @@
 <?php
 
 require_once 'Repository.php';
-require_once __DIR__.'/../models/Alcohol.php';
+require_once __DIR__ . '/../models/Alcohol.php';
 
-class AlcoholRepository extends Repository {
-
-    public function getAlcohols(): array {
+class AlcoholRepository extends Repository
+{
+    public function getAlcohols(): array
+    {
         $result = [];
-
-        $stmt = $this->database->connect()->prepare('
+        $connection = $this->database->connect();
+        $stmt = $connection->prepare('
             SELECT name, image FROM alcohols ORDER BY id_alcohol ASC 
         ');
 

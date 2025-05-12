@@ -1,14 +1,11 @@
 main {
     display: flex;
+    height: auto;
+    min-height: calc(100vh - 200px - 5vh);
 }
 
 nav {
     position: fixed;
-}
-
-figure {
-    display: flex;
-    flex-direction: column;
 }
 
 figcaption {
@@ -21,6 +18,36 @@ figcaption {
     line-height: 25px;
     text-align: center;
     text-transform: uppercase;
+
+}
+
+figure {
+    border-radius: 20px
+}
+
+#search-input {
+    width: 50%;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--primary-color);
+    color: white;
+    font-size: 1.5em;
+    margin: 6px 0;
+    padding: 10px 10px 10px 42px;
+}
+
+#search-container {
+    margin-top: 36px;
+    position: relative;
+}
+
+#search-container>i {
+    position: absolute;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    left: 15px;
+    top: 22px;
 }
 
 .cards {
@@ -32,12 +59,16 @@ figcaption {
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     height: 325px;
     width: 300px;
-    margin: 0
+    margin: 0;
+}
+
+.card:hover {
+    -webkit-box-shadow: 4px 4px 16px 0px rgba(1, 50, 32, 1);
+    -moz-box-shadow: 4px 4px 16px 0px rgba(1, 50, 32, 1);
+    box-shadow: 4px 4px 16px 0px rgba(1, 50, 32, 1);
 }
 
 .card img {
@@ -58,12 +89,10 @@ figcaption {
     }
 
     aside {
-        width: 100%;
         min-height: 200px;
         height: 25vh;
         display: flex;
         align-items: center;
-        justify-content: center;
     }
 
     aside img {
@@ -72,12 +101,26 @@ figcaption {
 
     #left-banner {
         height: auto;
+    }
+
+    #search-container {
+        display: flex;
+    }
+
+    #content-container {
+        padding: 0 12px
+    }
+
+    aside,
+    .cards,
+    #search-input,
+    #left-banner {
         width: 100%;
     }
 
-    .cards {
-        width: 100%;
+    aside,
+    .cards,
+    #search-container {
         justify-content: center;
-        margin-top: 24px;
     }
 }

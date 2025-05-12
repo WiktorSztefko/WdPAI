@@ -6,13 +6,17 @@ class User {
     private $username;
     private $email;
     private $password;
+    private $nameRole;
+    private $id;
 
-    public function __construct(string $name, string $surname, string $username, string $email, string $password) {
+    public function __construct(string $name, string $surname, string $username, string $email, string $password, array $nameRole = null ,int $id = null) {
         $this->name = $name;
         $this->surname = $surname;
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;
+        $this->nameRole = $nameRole;
+        $this->id = $id;
     }
 
     public function getName(): string {
@@ -53,5 +57,21 @@ class User {
 
     public function setPassword(string $password) {
         $this->password = $password;
+    }
+
+     public function getNameRole() : array {
+        return $this->nameRole;
+    }
+
+    public function setNameRole(array $nameRole) {
+        $this->nameRole = $nameRole;
+    }
+
+    public function getId() : int {
+        return $this->id;
+    }
+
+    public function setId(int $id) {
+        $this->id = $id;
     }
 }

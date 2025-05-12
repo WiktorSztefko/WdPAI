@@ -1,7 +1,15 @@
 main {
-  flex-direction: column;
+  display: flex;
   min-height: calc(100vh - 5vh - 200px);
   width: 100%
+}
+
+section {
+  width: 75vw;
+}
+
+nav {
+  position: fixed;
 }
 
 form {
@@ -12,35 +20,26 @@ form {
 #data-panel {
   display: flex;
   width: 100%;
-  gap: 36px;
 }
 
-#text-div {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  width: 50%;
-}
-
-textarea:focus, select:focus {
+textarea:focus,
+select:focus {
   outline: none;
 }
 
 button,
 input,
 label,
-p,
+#file-div p,
 textarea,
 #difficulty-level-select {
   width: 100%;
   background-color: var(--secondary-color);
   border: 1px solid var(--primary-color);
   border-radius: 20px;
-  box-sizing: border-box;
   color: white;
   font-size: 2em;
   line-height: 2em;
-  padding: 10px;
 }
 
 p {
@@ -53,22 +52,13 @@ button {
   color: var(--secondary-color);
 }
 
-input[type="number"] {
-  width: 15%;
-  padding: 12px;
-}
 
 #file-panel {
-  display: flex;
-  flex-direction: column;
-  width: calc(50% - 18px);
-  gap: 36px;
-  margin-top: 36px;
+  width: 100%;
 }
 
 #file-div {
   display: flex;
-  gap: 36px
 }
 
 label {
@@ -78,7 +68,10 @@ label {
 
 #ingredients-div {
   height: auto;
-  width: 50%;
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 18px;
 }
 
 #ingredients-div h2 {
@@ -88,45 +81,44 @@ label {
 }
 
 #ingredients-add-button {
-  background-color: var(--primary-color);
-  border-radius: 20px;
-  color: var(--secondary-color);
-  font-size: 2em;
-  margin: 18px 0 0 0;
-  padding: 10px;
-  width: 25%;
-  text-align: center;
+  margin: 18px 0 12px 0;
+  width: 40%;
 }
 
-#difficulty-level-div
-{
+#form-submit-button {
+  width: 50%;
+}
+
+#difficulty-level-div {
   display: flex;
   width: 100%;
-  gap: 36px
+}
+
+#ingredients-list {
+  width: 100%;
+  height: auto;
 }
 
 .ingredient-container {
   display: flex;
-  gap: 18px;
-  height: 100%;
   width: 100%;
+  gap: 18px;
   margin-top: 18px;
 }
 
-.count-select,
-.unit-select
-{
-  width: 50%;
+.ingredients-select,
+.unit-select {
+  width: 40%;
   background-color: var(--secondary-color);
   border: 1px solid var(--primary-color);
   border-radius: 20px;
   color: white;
   font-size: 1.5em;
-  padding: 6px;
 }
 
-.unit-select {
-  width: 15%;
+.unit-select,
+.count-select {
+  width: 20%;
 }
 
 .delete-icon {
@@ -138,26 +130,51 @@ label {
   text-align: center;
 }
 
+.gap36 {
+  gap: 36px
+}
+
+.pad6 {
+  padding: 6px
+}
+
+.messages {
+  width: 100%;
+}
+
+.messages p {
+  width: 100%;
+  color: var(--tertiary-color);
+  text-align: left;
+}
+.messages i{
+  padding-right: 6px;
+}
+
+.no-valid {
+  border: 1px solid var(--tertiary-color) !important;
+}
+
 @media screen and (max-width: 1200px) {
 
   form {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 12px;
     margin-top: 0;
+    margin-bottom: 36px;
+  }
+
+  nav {
+    position: static;
   }
 
   label,
   p {
-       width: 100%;
-       margin: 0;
+    margin: 0;
   }
 
-  section,
-  #ingredients-div {
-    width: 100%;
+  #ingredients-div,
+  section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   #ingredients-div h2 {
@@ -165,26 +182,35 @@ label {
   }
 
   #ingredients-add-button {
-    width: 100%;
-  }
-
-  #data-panel {
-    flex-direction: column;
-  }
-
-  #file-panel {
-    width: 100%;
-    align-items: center;
+    width: 50%;
   }
 
   #file-div {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
     gap: 18px;
   }
 
-  #text-div {
+  #file-panel,
+  #file-div,
+  #ingredients-div,
+  section {
+    align-items: center;
+  }
+
+  #file-div,
+  #data-panel,
+  #ingredients-div,
+  section,
+  main {
+    flex-direction: column;
+  }
+
+  #text-div,
+  #file-div,
+  #file-panel,
+  #ingredients-div,
+  label,
+  section,
+  p {
     width: 100%;
   }
 }

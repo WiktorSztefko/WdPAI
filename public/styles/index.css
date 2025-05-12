@@ -55,7 +55,7 @@ footer {
     height: 5vh;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     background-color: var(--secondary-color);
     border-top: 1px solid var(--tertiary-color);
     color: var(--primary-color);
@@ -65,18 +65,6 @@ footer {
 
 footer span {
     text-align: center;
-}
-
-#panel-form input, #panel-form button{
-    width: 100%;
-    background-color: var(--secondary-color);
-    border-radius: 20px;
-    box-sizing: border-box;
-    border: 1px solid var(--primary-color);
-    color: white;
-    font-size: 1.5em;
-    margin: 6px 0;
-    padding: 10px 10px 10px 42px;
 }
 
 input:focus {
@@ -98,6 +86,31 @@ p {
     flex-direction: column;
     width: 25vw;
     margin-top: 36px;
+
+}
+
+#current-user-div {
+    background-color: var(--primary-color);
+    min-width: 360px;
+    height: 2em;
+    line-height: 2em;
+    font-size: 1.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#current-user-div a {
+    color: var(--secondary-color);
+}
+
+.logout-icon {
+    padding: 12px
 }
 
 .header-text {
@@ -113,6 +126,11 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .hover-effect:hover {
@@ -166,72 +184,87 @@ p {
     opacity: 0.4;
 }
 
+.input-icon-div {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.input-icon-div>i {
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+.messages {
+    width: 100%;
+}
+
 @media screen and (max-width: 1200px) {
     body {
-        display: flex;
-        flex-direction: column;
-        background-color: var(--secondary-color);
         margin: 0;
     }
 
+    body,
+    nav>ul>li>a,
     header {
-        height: auto;
-    }
-
-    header>a {
         display: flex;
         flex-direction: column;
     }
 
+    header * {
+        display: block;
+    }
+
+    header,
+    footer {
+        height: auto;
+    }
+
+    nav,
+    nav>ul>li>a {
+        justify-content: space-around;
+        align-items: center;
+    }
+
     nav {
-        height: 100px;
         width: 100%;
         min-height: 100px;
         border-bottom: 1px solid var(--tertiary-color);
         display: flex;
-        justify-content: center;
-        align-items: center;
+    }
+
+    nav,
+    nav>ul>li {
+        height: 100%;
     }
 
     nav>ul {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        height: 100%;
-        gap: 1.5em;
+        gap: 0.7em;
         color: var(--primary-color);
         margin: 0;
         padding: 0;
     }
 
     nav>ul>li {
-        display: flex;
-        flex-direction: column;
         justify-content: center;
-        height: 100%;
         font-size: 1.3em;
-        gap: 0.5em;
-    }
 
-    nav>ul>li>a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
     nav>ul>li>a>i {
         font-size: 1.8em;
     }
 
-    footer {
-        height: auto;
-    }
-
-    #left-banner
-    {
+    #left-banner {
         width: 100%;
         margin: 0;
+    }
+
+    #current-user-div {
+        display: none;
     }
 
     .desktop-icons {
