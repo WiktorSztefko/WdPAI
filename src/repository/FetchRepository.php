@@ -69,7 +69,7 @@ class FetchRepository extends Repository
             }
         } catch (Exception $e) {
             $connection->rollBack();
-            throw $e;
+            //throw $e;
         }
     }
 

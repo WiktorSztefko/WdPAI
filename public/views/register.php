@@ -46,7 +46,7 @@
             </div>
             <div class="messages">
                 <?php if (isset($messages["warningUsername"])): ?>
-                    <p><i class="fa-solid fa-triangle-exclamation"></i><?= $messages["warningUsername"] ?></p>
+                    <p><i class="fa-solid fa-circle-exclamation"></i><?= $messages["warningUsername"] ?></p>
                 <?php endif; ?>
             </div>
 
@@ -57,7 +57,7 @@
             </div>
             <div class="messages">
                 <?php if (isset($messages["warningEmail"])): ?>
-                    <p><i class="fa-solid fa-triangle-exclamation"></i><?= $messages["warningEmail"] ?></p>
+                    <p><i class="fa-solid fa-circle-exclamation"></i><?= $messages["warningEmail"] ?></p>
                 <?php endif; ?>
             </div>
 

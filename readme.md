@@ -43,6 +43,7 @@ Projekt został zbudowany w oparciu o nowoczesny stos technologiczny:
 ![Alkohole](./screenshots/alcohols.png)
 ![Logowanie](./screenshots/login.png)
 ![Register](./screenshots/register.png)
+![ERD](./screenshots/erd.png)
 
 ## Testowanie
 Na ten moment aplikacja nie zawiera zautomatyzowanych testów. Testy manualne są wykonywane przez użytkownika w środowisku lokalnym.

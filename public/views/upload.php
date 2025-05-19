@@ -39,7 +39,7 @@
                         value="<?= isset($messages['name']) ? ($messages['name']) : '' ?>">
                     <?php if (isset($messages['warningName'])): ?>
                         <div class="messages">
-                            <p><i class="fa-solid fa-triangle-exclamation"></i><?= $messages['warningName'] ?></p>
+                            <p><i class="fa-solid fa-circle-exclamation"></i><?= $messages['warningName'] ?></p>
                         </div>
                     <?php endif; ?>
 
@@ -82,13 +82,13 @@
                         <?php if (isset($messages['type']) || isset($messages['size']) || isset($messages['warningImage'])): ?>
                             <div class="messages">
                                 <?php if (isset($messages['warningImage'])): ?>
-                                    <p><i class="fa-solid fa-triangle-exclamation"></i><?= $messages['warningImage'] ?></p>
+                                    <p><i class="fa-solid fa-circle-exclamation"></i><?= $messages['warningImage'] ?></p>
                                 <?php endif; ?>
                                 <?php if (isset($messages['type'])): ?>
-                                    <p><i class="fa-solid fa-triangle-exclamation"></i><?= $messages['type'] ?></p>
+                                    <p><i class="fa-solid fa-circle-exclamation"></i><?= $messages['type'] ?></p>
                                 <?php endif; ?>
                                 <?php if (isset($messages['size'])): ?>
-                                    <p><i class="fa-solid fa-triangle-exclamation"></i><?= $messages['size'] ?></p>
+                                    <p><i class="fa-solid fa-circle-exclamation"></i><?= $messages['size'] ?></p>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>

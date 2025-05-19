@@ -52,7 +52,7 @@ class UploadRepository extends Repository
             $connection->commit();
         } catch (Exception $e) {
             $connection->rollBack();
-            throw $e;
+            //throw $e;
         }
     }
 

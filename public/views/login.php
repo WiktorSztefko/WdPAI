@@ -26,7 +26,7 @@
             </a>
             <h1 class="header-text">Cocktail King</h1>
             <div class="input-icon-div">
-                <input type="text" placeholder="Nazwa użytkownika" name="email" class="hover-effect-not-scale" value="<?php if (isset($messages["value_email"]))
+                <input type="email" placeholder="Adres email" name="email" class="hover-effect-not-scale" value="<?php if (isset($messages["value_email"]))
                     echo $messages["value_email"]; ?>">
                 <i class="fa-solid fa-envelope"></i>
             </div>
@@ -37,7 +37,7 @@
 
             <div class="messages">
                 <?php if (isset($messages["error_login"])): ?>
-                    <p><i class="fa-solid fa-triangle-exclamation"></i><?= $messages["error_login"] ?></p>
+                    <p><i class="fa-solid fa-circle-exclamation"></i><?= $messages["error_login"] ?></p>
                 <?php endif; ?>
             </div>
 

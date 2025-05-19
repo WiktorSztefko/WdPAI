@@ -1,0 +1,55 @@
+main {
+    height: auto;
+    min-height: calc(100vh - 200px - 5vh);
+    gap: 36px
+}
+
+h1,
+h2,
+i {
+    color: var(--tertiary-color)
+}
+
+h1,
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 8em;
+}
+
+h2,
+i {
+    font-size: 4em;
+}
+
+.icons {
+    display: flex;
+    gap: 36px;
+}
+
+@media screen and (max-width: 1200px) {
+
+    main * {
+        padding: 6px
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+
+    h1 {
+        margin-top: 36px;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    .icons {
+        margin-bottom: 36px;
+    }
+}

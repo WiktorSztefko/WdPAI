@@ -29,8 +29,9 @@ class CocktailController extends AppController
         $item = $this->cocktailRepository->getCocktail($name);
 
         if ($item === null) {
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: $url/cocktails");
+            $object = new DefaultController();
+            $object->notFound();
+            return;
         }
 
         $this->render('cocktail', ['item' => $item]);

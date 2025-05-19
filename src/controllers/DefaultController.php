@@ -21,4 +21,10 @@ class DefaultController extends AppController
     {
         $this->render('main');
     }
+
+    public function notFound()
+    {
+        http_response_code(404);
+        $this->render('notFound');
+    }
 }

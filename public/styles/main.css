@@ -27,6 +27,10 @@ aside span {
     display: block;
 }
 
+aside h2{
+    margin: 0;
+}
+
 button {
     width: 80%;
     background-color: var(--secondary-color);
